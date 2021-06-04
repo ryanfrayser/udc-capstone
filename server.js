@@ -39,7 +39,7 @@ function listening () {
 
 // GET Route
 
-app.get('/', function (req, res){
+app.get('/getEntry', function (req, res) {
     console.log('GET Received' + projectData);
     res.send(projectData);
 });
@@ -47,12 +47,20 @@ app.get('/', function (req, res){
 //POST Route
 
 
-app.post('/', function(req,res){
-
-    //!!This needs to post an object recording the temperature, date, and user response !!
-    // projectData.push(req);
-
-    res.send('POST Recieved');
-})
+app.post('/addEntry', addEntry)
 
 
+function addEntry (req,res){
+
+//Create new entry based on the incoming POST request
+let newEntry = {
+    Temperature: req.body.temperature,
+    Date: req.body.date,
+    Feelings: req.body.response
+}
+
+// projectData.push(newEntry);
+res.send(projectData);
+
+console.log('POST Recieved',projectData);
+}
