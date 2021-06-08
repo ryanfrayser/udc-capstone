@@ -5,10 +5,6 @@ const apiKey = "8a1815c4bb8292c0b1d39a5094817e19";
 const apiLink = "http://api.openweathermap.org/data/2.5/weather?zip="
 
 
-
-
-
-
 // "Generate" Button Action
 
 document.getElementById('generate').addEventListener('click', createEntry);
@@ -33,9 +29,11 @@ function createEntry (e){
             date: newDate,
             feelings: feelingsInput
         });
+    })
+    // After post is made to the server, update the UI on the page
+    .then(()=>updateUi());
 
-    });
-};
+}
 
 //Make request to Open Weather API
 
@@ -81,5 +79,19 @@ const postEntry = async (url ='', data = {})=>{
     }
 }
 
-//GET Method to retrieve Data from the Server
 
+// Get information from server and update the UI.
+
+const updateUi = async ()=>{
+    const req = await fetch('/getEntry');
+
+    try {
+        const data = await req.json();
+        document.getElementById('date').innerHTML = data.Date;
+        document.getElementById('temp').innerHTML = data.Temperature;
+        document.getElementById('content').innerHTML = data.Feelings;
+    }
+    catch(error){
+        console.log("error updating UI", error);
+    }
+}

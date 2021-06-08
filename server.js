@@ -40,15 +40,12 @@ function listening () {
 // GET Route
 
 app.get('/getEntry', function (req, res) {
-    console.log('GET Received' + projectData);
     res.send(projectData);
 });
 
 //POST Route
 
-
 app.post('/addEntry', addEntry)
-
 
 function addEntry (req,res){
 
@@ -56,11 +53,10 @@ function addEntry (req,res){
 let newEntry = {
     Temperature: req.body.temperature,
     Date: req.body.date,
-    Feelings: req.body.response
+    Feelings: req.body.feelings
 }
-
-// projectData.push(newEntry);
+Object.assign(projectData, newEntry);
 res.send(projectData);
 
-console.log('POST Recieved',projectData);
+// console.log('POST Recieved',projectData);
 }
