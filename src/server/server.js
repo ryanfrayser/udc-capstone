@@ -12,8 +12,22 @@ const bodyParser = require('body-parser');
 
 /* Middleware*/
 //Here we are configuring express to use body-parser as middle-ware.
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(bodyParser.json());
+
+
+// Webpack middleware.
+
+var webpack = require('webpack');
+var webpackConfig = require('./webpack.config');
+var compiler = webpack(webpackConfig);
+
+app.use(require("webpack-dev-middleware")(compiler, {
+    noInfo: true, publicPath: webpackConfig.output.publicPath
+}));
+
+app.use(require("webpack-hot-middleware")(compiler));
+
 
 // Cors for cross origin allowance
 const cors = require ('cors');
