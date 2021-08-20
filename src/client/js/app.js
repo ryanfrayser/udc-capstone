@@ -9,7 +9,7 @@ const apiLink = "http://api.openweathermap.org/data/2.5/weather?zip="
 
 document.getElementById('generate').addEventListener('click', createEntry);
 
-function createEntry (e){
+export function createEntry (e){
 
     // Create a new date instance dynamically with JS
     let d = new Date();

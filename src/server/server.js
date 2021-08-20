@@ -1,76 +1,23 @@
-// Setup empty JS object to act as endpoint for all routes
-const projectData = {};
-
-// Require Express to run server and routes
+var path = require('path')
 const express = require('express');
+const webpack = require('webpack');
+const webpackDevMiddleware = require('webpack-dev-middleware');
+const dotenv = require('dotenv')
 
-// Start up an instance of app
+
 const app = express();
+const config = require('./webpack.config.js');
+const compiler = webpack(config);
 
-//Dependencies
-const bodyParser = require('body-parser');
+// Tell express to use the webpack-dev-middleware and use the webpack.config.js
+// configuration file as a base.
+app.use(
+  webpackDevMiddleware(compiler, {
+    publicPath: config.output.publicPath,
+  })
+);
 
-/* Middleware*/
-//Here we are configuring express to use body-parser as middle-ware.
-// app.use(bodyParser.urlencoded({ extended: false }));
-// app.use(bodyParser.json());
-
-
-// Webpack middleware.
-
-var webpack = require('webpack');
-var webpackConfig = require('./webpack.config');
-var compiler = webpack(webpackConfig);
-
-app.use(require("webpack-dev-middleware")(compiler, {
-    noInfo: true, publicPath: webpackConfig.output.publicPath
-}));
-
-app.use(require("webpack-hot-middleware")(compiler));
-
-
-// Cors for cross origin allowance
-const cors = require ('cors');
-app.use(cors());
-
-// Initialize the main project folder
-app.use(express.static('website'));
-
-
-// Setup Server
-
-const port = 8000;
-const server = app.listen(port, listening);
-
-function listening () {
-
-    console.log('server is running');
-    console.log(`running on local host: ${port}`);
-};
-
-
-// ROUTING
-
-// GET Route
-
-app.get('/getEntry', function (req, res) {
-    res.send(projectData);
+// Serve the files on port 3000.
+app.listen(3000, function () {
+  console.log('Example app listening on port 3000!\n');
 });
-
-//POST Route
-
-app.post('/addEntry', addEntry)
-
-function addEntry (req,res){
-
-//Create new entry based on the incoming POST request
-let newEntry = {
-    Temperature: req.body.temperature,
-    Date: req.body.date,
-    Feelings: req.body.feelings
-}
-Object.assign(projectData, newEntry);
-res.send(projectData);
-
-// console.log('POST Recieved',projectData);
-}
