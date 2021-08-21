@@ -56,7 +56,6 @@ plugins: [
     template :"./src/client/views/index.html",
     filename: "./index.html"
     }),
-
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin()
 ],

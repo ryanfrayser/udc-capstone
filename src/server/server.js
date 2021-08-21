@@ -5,6 +5,7 @@ const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 const dotenv = require('dotenv')
 
+
 const app = express();
 const config = require('../../webpack.config');
 const compiler = webpack(config);
@@ -18,6 +19,8 @@ app.use(
 );
 
 app.use(webpackHotMiddleware(compiler));
+
+app.use(express.static('dist'));
 
 // Serve the files on port 3000.
 app.listen(3000, function () {
