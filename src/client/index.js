@@ -1,5 +1,8 @@
 // Import Functions
-import {createEntry} from "./js/app.js"
+import {createEntry} from "./js/app.js";
+import {getWeather} from "./js/app.js";
+import {postEntry} from "./js/app.js";
+import {updateUi} from "./js/app.js";
 
 
 console.log ("I'm here!");
@@ -16,8 +19,11 @@ import './styles/style.scss';
 
 
 export {
-  createEntry
-}
+  createEntry,
+  getWeather,
+  postEntry,
+  updateUi
+};
 
 if (module.hot)       // eslint-disable-line no-undef
   module.hot.accept() // eslint-disable-line no-undef

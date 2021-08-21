@@ -37,7 +37,7 @@ export function createEntry (e){
 
 //Make request to Open Weather API
 
-const getWeather = async (apiLink,  zipCode, apiKey) => {
+export const getWeather = async (apiLink,  zipCode, apiKey) => {
 
     const response = await fetch(`${apiLink}${zipCode}&units=imperial&appid=${apiKey}`)
 
@@ -58,7 +58,7 @@ const getWeather = async (apiLink,  zipCode, apiKey) => {
 
 
 // POST Method for turning the data to JSON
-const postEntry = async (url ='', data = {})=>{
+export const postEntry = async (url ='', data = {})=>{
     const response = await fetch(url, {
         method: 'POST',
         credentials: 'same-origin',
@@ -75,14 +75,14 @@ const postEntry = async (url ='', data = {})=>{
         return newData
     }
     catch (error){
-        console.log("Error at postEntry", error)
+        console.log("Error at postEntry!", error)
     }
 }
 
 
 // Get information from server and update the UI.
 
-const updateUi = async ()=>{
+export const updateUi = async ()=>{
     const req = await fetch('/getEntry');
 
     try {

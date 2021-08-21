@@ -20,9 +20,40 @@ app.use(
 
 app.use(webpackHotMiddleware(compiler));
 
-app.use(express.static('dist'));
+app.use(express.static('public'));
 
 // Serve the files on port 3000.
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!\n');
 });
+
+
+
+
+// Weather Journal App Logic... for testing.
+
+const projectData = {};
+// GET Route
+
+app.get('/getEntry', function (req, res) {
+  res.send(projectData);
+  console.log("TEST!!")
+});
+
+//POST Route
+
+app.post('/addEntry', addEntry)
+
+function addEntry (req,res){
+
+//Create new entry based on the incoming POST request
+let newEntry = {
+  Temperature: req.body.temperature,
+  Date: req.body.date,
+  Feelings: req.body.feelings
+}
+Object.assign(projectData, newEntry);
+res.send(projectData);
+
+// console.log('POST Recieved',projectData);
+}
