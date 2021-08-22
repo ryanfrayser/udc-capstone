@@ -2,9 +2,10 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { web } = require('webpack');
+const mode = process.env.NODE_ENV === 'production' ? 'production' : 'development'
 
 module.exports = {
-mode: 'development',
+mode: mode,
 target: 'web',
 devtool: 'inline-source-map',
 entry: {
