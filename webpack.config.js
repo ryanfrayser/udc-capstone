@@ -8,11 +8,12 @@ mode: 'development',
 target: 'web',
 devtool: 'inline-source-map',
 entry: {
-    index: ['webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000', './src/client/index.js']
+    main: ['webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000', './src/client/index.js']
 },
 
+
 output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.join(__dirname, 'dist'),
     clean: true,
     publicPath: '/',
 },
@@ -51,13 +52,16 @@ module: {
 
 
 plugins: [
+  new webpack.HotModuleReplacementPlugin(),
+  new webpack.NoEmitOnErrorsPlugin(),
+
     new HtmlWebpackPlugin({
     title: 'Development',
     template :"./src/client/views/index.html",
-    filename: "./index.html"
+    filename: "index.html"
     }),
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoEmitOnErrorsPlugin()
+
+
 ],
 
 
