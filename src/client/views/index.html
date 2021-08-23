@@ -1,33 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Weather Journal</title>
 </head>
  <body>
-<div id = "app">
-  <div class ="holder headline">
+<!-- <div id = "app"> -->
+  <div class ="headline">
    <h1> Lets explore...</h1>
   </div>
-  <div class ="holder zip">
+  <!-- Location Input -->
+  <div id="location">
     <label for="location">Where are you traveling to?</label>
-    <input type="text" id="zip" placeholder="Enter ZIP Code Here">
+    <input type="text"  placeholder="Travel Location" required>
   </div>
-  <div class ="holder feel">
-    <label for="feelings">How are you feeling today?</label>
-    <textarea class= "myInput" id="feelings" placeholder="Enter your feelings here" rows="3" cols="50"></textarea>
+  <!-- Date Input -->
+  <div class ="dates">
+    <div  id="startDate" >
+      <label for="start date">Trip start date</label>
+      <input type="date" class= "dateInput"placeholder="Travel start date" required>
+  </div>
+  <div id="endDate">
+    <label for="end Date">Trip end date</label>
+    <input type="date" class= "dateInput"  placeholder="Travel end date" required>
+  </div>
+<!-- Button -->
     <button id="generate" type = "submit"> Generate </button>
   </div>
-  <div class ="holder entry">
-    <div class = "title">Most Recent Entry</div>
+<!-- Results -->
+  <div class ="results">
+    <div class = "title">Trips
+    </div>
     <hr>
    <div id = "entryHolder">
-    <div id = "date"></div>
-   <div id = "temp"></div>
-   <div id = "content"></div>
+      <div id = "date"></div>
+      <div id = "temp"></div>
+      <div id = "content"></div>
   </div>
   </div>
+  <!-- Saved Trips? -->
+  <div>
+    Saved Trips
+    <hr>
   </div>
+<footer>
+  <p>Capstone Project</p>
+</footer>
 
 </body>
 </html>

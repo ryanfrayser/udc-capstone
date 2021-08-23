@@ -29,8 +29,6 @@ module: {
         loader: "babel-loader",
       },
       {
-        // Loads the javacript into html template provided.
-        // Entry point is set below in HtmlWebPackPlugin in Plugins
         test: /\.html$/,
         use: [
           {
@@ -40,14 +38,14 @@ module: {
         ]
       },
       {
-      test: /\.scss$/,
+            test: /\.scss$/,
              use: [ 'style-loader', 'css-loader', 'sass-loader' ]
             },
 
       {
-       test: /\.(png|svg|jpg|gif)$/,
-       use: ['file-loader']
-      }
+          test: /\.(woff(2)?|ttf|eot|png|svg|jpg|jpeg|gif)$/i,
+            type: 'asset/resource',
+        },
     ]
   },
 

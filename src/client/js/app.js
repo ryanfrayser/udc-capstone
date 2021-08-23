@@ -7,7 +7,7 @@ const apiLink = "http://api.openweathermap.org/data/2.5/weather?zip="
 
 // "Generate" Button Action
 
-document.getElementById('generate').addEventListener('click', createEntry);
+// document.getElementById('generate').addEventListener('click', createEntry);
 
 export function createEntry (e){
 

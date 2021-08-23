@@ -10,11 +10,12 @@ console.log ("I'm here!");
 //Import Styles
 import './styles/style.scss';
 
-//Export Functions
+//Event Listeners
 
 
 
 
+//Export Functionsr
 export {
   createEntry,
   getWeather,
