@@ -26,7 +26,7 @@ body{
     background: #eee;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     display: grid;
-    grid-template-rows: 300px auto auto auto auto;
+    grid-template-rows: 300px 100px 200px auto auto;
     min-height: 100vh;
     // background: #eeeeee;
     color: #181818;
@@ -56,7 +56,7 @@ button{
 label{
     display:block;
     font-size: 20px;
-    margin-bottom: .5em;
+    margin-bottom: 0.5em;
 }
 
 input{

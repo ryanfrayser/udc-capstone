@@ -11,24 +11,20 @@
   </div>
   <!-- Location Input -->
   <div id="location">
-    <label for="location">Where are you traveling to?</label>
-    <input type="text"  placeholder="Travel Location" required>
+    <label for="placename">Where are you traveling to?</label>
+    <input type="text"  id='placename' placeholder="Travel Location" required>
   </div>
   <!-- Date Input -->
   <div class ="dates">
-    <div  id="startDate" >
-      <label for="start date">Trip start date</label>
-      <input type="date" class= "dateInput"placeholder="Travel start date" required>
-  </div>
-  <div id="endDate">
-    <label for="end Date">Trip end date</label>
-    <input type="date" class= "dateInput"  placeholder="Travel end date" required>
+    <div>
+      <label for="startDate">Trip start date</label>
+      <input type="date" class= "dateInput" id="startDate" placeholder="Travel start date" required>
   </div>
 <!-- Button -->
     <button id="generate" type = "submit"> Generate </button>
   </div>
 <!-- Results -->
-  <div class ="results">
+  <div id="results">
     <div class = "title">Results Go Here
     </div>
     <hr>

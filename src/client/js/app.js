@@ -1,9 +1,5 @@
 /* Global Variables */
 
-// Open Weather API
-const apiKey = "8a1815c4bb8292c0b1d39a5094817e19";
-const apiLink = "http://api.openweathermap.org/data/2.5/weather?zip="
-
 
 // "Generate" Button Action
 
@@ -11,13 +7,13 @@ const apiLink = "http://api.openweathermap.org/data/2.5/weather?zip="
 
 export function createEntry (e){
 
-    // Create a new date instance dynamically with JS
-    let d = new Date();
-    let newDate = d.getMonth()+ 1 +'/'+ d.getDate()+'/'+ d.getFullYear();
-    //Get Zipcode Entry
-    const zipCode = document.getElementById('zip').value;
+    // // Create a new date instance dynamically with JS
+    // let d = new Date();
+    // let newDate = d.getMonth()+ 1 +'/'+ d.getDate()+'/'+ d.getFullYear();
+    //Get placename entry
+    const placename = document.getElementById('placename').value;
      //Retrieve Feelings Text
-    const feelingsInput = document.getElementById('feelings').value;
+    const startDate = document.getElementById('startDate').value;
 
     //Run and return Weather API Temp from entered ZIP
     getWeather(apiLink, zipCode, apiKey)
