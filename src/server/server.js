@@ -4,30 +4,35 @@ const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 const dotenv = require('dotenv')
+const axios = require('axios').default
 
 
+
+//Webpack Middleware and Dev Hot Middlleware Setup
 const app = express();
 const config = require('../../webpack.config');
 const compiler = webpack(config);
 
-// Tell express to use the webpack-dev-middleware and use the webpack.config.js
-// configuration file as a base.
 app.use(
   webpackDevMiddleware(compiler, {
     publicPath: config.output.publicPath
   })
 );
-
 app.use(webpackHotMiddleware(compiler));
-
 app.use(express.static('dist'));
+
+//Body Parser
+const bodyParser = require ('body-parser')
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
 
 // Serve the files on port 3000.
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!\n');
 });
 
-
+//---------------- App Logic Below ------------------
 
 
 // Weather Journal App Logic... for testing.
@@ -42,18 +47,12 @@ app.get('/getEntry', function (req, res) {
 
 //POST Route
 
-app.post('/addEntry', addEntry)
+app.post('/weather', async (req,res) => {
 
-function addEntry (req,res){
+  console.log(req.body)
 
-//Create new entry based on the incoming POST request
-let newEntry = {
-  Temperature: req.body.temperature,
-  Date: req.body.date,
-  Feelings: req.body.feelings
-}
-Object.assign(projectData, newEntry);
-res.send(projectData);
+
+// res.send(projectData);
 
 // console.log('POST Recieved',projectData);
-}
+})

@@ -1,17 +1,24 @@
-import axios from 'axios';
+const axios = require('axios');
+
 
 export function handleSubmit(event){
     event.preventDefault();
 
 //Get placename entry
-const placename = document.getElementById('placename').value;
+let placename = document.getElementById('placename').value;
 //Retrieve startDate entry
-const startDate = document.getElementById('startDate').value;
+let startDate = document.getElementById('startDate').value;
 
+console.log(placename,startDate)
 
+//Make Post Request to Server
 
+    axios.post('http://localhost:3000/weather', {placename})
 
-
+    // //Then post Data.
+    // .then(function(res){
+    //     console.log(res)
+    // })
 
 
 }
