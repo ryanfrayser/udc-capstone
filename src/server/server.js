@@ -38,6 +38,7 @@ app.listen(3000, function () {
 
 // Import Modules
 const getCord = require("./geoCall")
+const countdown = require("./countdown");
 
 
 //POST Route
@@ -52,6 +53,12 @@ console.log ('Request Made:::', location, date)
   //Call Geonames API
   const coordinates = await getCord(location)
     console.log(coordinates, 'From Geo Names API')
+
+
+//Get Countdown
+  const countdownDays = await countdown(date);
+    console.log(countdownDays, 'Days Away!')
+
 
 //Call Weather
 
