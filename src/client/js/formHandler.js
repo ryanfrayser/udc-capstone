@@ -13,7 +13,7 @@ console.log(placename,startDate)
 
 //Make Post Request to Server
 
-    axios.post('http://localhost:3000/weather', {placename})
+    axios.post('http://localhost:3000/weather', {placename, startDate})
 
     // //Then post Data.
     // .then(function(res){

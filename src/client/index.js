@@ -1,8 +1,4 @@
 // Import Functions
-import {createEntry} from "./js/app.js";
-import {getWeather} from "./js/app.js";
-import {postEntry} from "./js/app.js";
-import {updateUi} from "./js/app.js";
 import {handleSubmit} from "./js/formHandler.js";
 
 console.log ("I'm here!");
@@ -16,12 +12,8 @@ document.getElementById('generate').addEventListener('click', handleSubmit);
 
 
 
-//Export Functionsr
+//Export Functions
 export {
-  createEntry,
-  getWeather,
-  postEntry,
-  updateUi,
   handleSubmit
 };
 

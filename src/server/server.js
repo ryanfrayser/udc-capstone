@@ -3,8 +3,9 @@ const express = require('express');
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
-const dotenv = require('dotenv')
-const axios = require('axios').default
+const dotenv = require('dotenv').config();
+const axios = require('axios').default;
+const fetch = require('node-fetch');
 
 
 
@@ -35,24 +36,25 @@ app.listen(3000, function () {
 //---------------- App Logic Below ------------------
 
 
-// Weather Journal App Logic... for testing.
+// Import Modules
+const getCord = require("./geoCall")
 
-const projectData = {};
-// GET Route
-
-app.get('/getEntry', function (req, res) {
-  res.send(projectData);
-  console.log("TEST!!")
-});
 
 //POST Route
 
 app.post('/weather', async (req,res) => {
 
-  console.log(req.body)
+const location = req.body.placename;
+const date = req.body.startDate;
+
+console.log ('Request Made:::', location, date)
+
+  //Call Geonames API
+  const coordinates = await getCord(location)
+    console.log(coordinates, 'From Geo Names API')
+
+//Call Weather
 
 
-// res.send(projectData);
 
-// console.log('POST Recieved',projectData);
 })
