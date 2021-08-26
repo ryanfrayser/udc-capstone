@@ -2,7 +2,7 @@ const axios = require('axios').default;
 
 // Call Weather Forcast API
 
-async function getWeather (lat, lng) {
+const getWeather = async (lat, lng) => {
 
     const apiKey = process.env.WEATHERBIT_API_KEY
 

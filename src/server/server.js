@@ -40,6 +40,7 @@ app.listen(3000, function () {
 const getCord = require("./geoCall")
 const countdown = require("./countdown");
 const getWeather = require('./weatherCall');
+const getPhoto = require('./pixCall')
 
 
 //POST Route (aka. all the things come back here to meet)
@@ -54,7 +55,7 @@ console.log ('Request Made:::', location, date)
 
   //Get Countdown
   const countdownDays = await countdown(date);
-  console.log(countdownDays, 'Days Away!');
+    console.log(countdownDays, 'Days Away!');
 
 
   //Call Geonames API
@@ -64,10 +65,14 @@ console.log ('Request Made:::', location, date)
     let lat = coordinates.lat;
     let lng = coordinates.lng;
 
-// Call Weather
+  // Call Weather
 
   const weatherForcast = await getWeather(lat, lng);
-      console.log('Forcast recieved::: Todays max temp is:',weatherForcast.data[0].max_temp)
+    console.log('Forcast recieved::: Todays max temp is:',weatherForcast.data[0].max_temp)
+
+  //Call Photo from Pixabay
+
+  const locationPhoto = await getPhoto(location);
 
 
 
