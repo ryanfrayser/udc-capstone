@@ -15,10 +15,10 @@ console.log(placename,startDate)
 
     axios.post('http://localhost:3000/weather', {placename, startDate})
 
-    // //Then post Data.
-    // .then(function(res){
-    //     console.log(res)
-    // })
+    //Then log Data recieved.
+    .then(function(res){
+        console.log(res.data)
+    })
 
 
 }

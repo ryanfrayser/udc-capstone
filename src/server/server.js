@@ -75,5 +75,21 @@ console.log ('Request Made:::', location, date)
   const locationPhoto = await getPhoto(location);
     console.log('Photo Recieved! URL:',locationPhoto)
 
+  try {
 
+    const clientData = {
+      location: location,
+      date: date,
+      countdown: countdownDays,
+      forecast: weatherForecast,
+      photoUrl: locationPhoto
+    }
+
+    res.send(clientData)
+    console.log('Data successfully sent from server!')
+  }
+
+  catch(error){
+    console.log(':::::Error sending data to the Client', error)
+  }
 })
