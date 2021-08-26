@@ -67,8 +67,8 @@ console.log ('Request Made:::', location, date)
 
   // Call Weather
 
-  const weatherForcast = await getWeather(lat, lng);
-    console.log('Forcast recieved::: Todays max temp is:',weatherForcast.data[0].max_temp)
+  const weatherForecast = await getWeather(lat, lng);
+    console.log('Forecast recieved::: Todays max temp is:',weatherForecast.data[0].max_temp)
 
   //Call Photo from Pixabay
 
