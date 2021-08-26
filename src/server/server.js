@@ -73,7 +73,7 @@ console.log ('Request Made:::', location, date)
   //Call Photo from Pixabay
 
   const locationPhoto = await getPhoto(location);
-
+    console.log('Photo Recieved! URL:',locationPhoto)
 
 
 })
