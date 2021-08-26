@@ -17,8 +17,13 @@ console.log(placename,startDate)
 
     //Then log Data recieved.
     .then(function(res){
-        console.log(res.data)
+        const data = res.data
+        console.log(data)
+        return data
     })
+
+//Update User Inteface -> Run UpdateUI function
+    .then(updateUI(data))
 
 
 }

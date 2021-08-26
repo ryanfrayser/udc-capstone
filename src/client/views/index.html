@@ -19,26 +19,32 @@
     <div>
       <label for="startDate">Trip start date</label>
       <input type="date" class= "dateInput" id="startDate" placeholder="Travel start date" required>
-  </div>
+    </div>
 <!-- Button -->
     <button id="generate" type = "submit"> Generate </button>
   </div>
 <!-- Results -->
-  <div id="results">
-    <div class = "title">Results Go Here
-    </div>
-    <hr>
-   <div id = "entryHolder">
-      <div id = "date"></div>
-      <div id = "temp"></div>
-      <div id = "content"></div>
-  </div>
-  </div>
-  <!-- Saved Trips? -->
-  <div>
-   Saved Trips?
-    <hr>
-  </div>
+  <section id="results" class="noDisplay">
+      <img>
+      <div>
+          <h3 id='tripTitle'></h3>
+          <!-- Show this content if the current weather is displayed -->
+          <div id='currentWeather' class='noDisplay'>
+             <p id='currentTitle' ></p>
+             <img id='currentWeatherIcon'>
+             <h1 id='currentTemp'></h1>
+          </div>
+
+          <!-- Show this if 5-day forecast is displayed -->
+          <div id='forecast' class='noDisplay'>
+            <p id='forecastTitle'></p>
+            <ul id='fiveDayForecast'></ul>
+          </div>
+      </div>
+
+
+
+  </section>
 <footer>
   <p>Capstone Project</p>
 </footer>
