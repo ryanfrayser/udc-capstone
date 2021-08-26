@@ -2,7 +2,7 @@ const countdown = (date) => {
 
 //Create a countdown by subtracting the future leaving date by the users current date.
     let tripDate = Date.parse(date);
-    console.log(tripDate)
+    // console.log(tripDate)
 
 
     let d = new Date();

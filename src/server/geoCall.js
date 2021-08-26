@@ -1,14 +1,14 @@
 //Geonames Fetch Request
-const fetch = require('node-fetch');
+const axios = require('axios').default;
 
 
 async function getCord (location) {
     const username = process.env.GEO_USERNAME
 
-    const response = await fetch(`http://api.geonames.org/postalCodeSearchJSON?placename=${location}&maxRows=1&username=${username}`)
+    const response = await axios.get(`http://api.geonames.org/postalCodeSearchJSON?placename=${location}&maxRows=1&username=${username}`)
 
     try {
-        const data = await response.json();
+        const data = await response.data
 
       //  console.log(data.postalCodes[0].lat)
 

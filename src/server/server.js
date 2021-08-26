@@ -60,7 +60,10 @@ console.log ('Request Made:::', location, date)
     console.log(countdownDays, 'Days Away!')
 
 
-//Call Weather
+// Call Weather
+
+
+
 
 
 
