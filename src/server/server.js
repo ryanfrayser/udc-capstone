@@ -39,31 +39,35 @@ app.listen(3000, function () {
 // Import Modules
 const getCord = require("./geoCall")
 const countdown = require("./countdown");
+const getWeather = require('./weatherCall');
 
 
-//POST Route
+//POST Route (aka. all the things come back here to meet)
 
 app.post('/weather', async (req,res) => {
 
 const location = req.body.placename;
 const date = req.body.startDate;
 
+console.log("::::::::::::::::::::::::::::::::::::::::::::::::")
 console.log ('Request Made:::', location, date)
 
-  //Call Geonames API
-  const coordinates = await getCord(location)
-    console.log(coordinates, 'From Geo Names API')
-
-
-//Get Countdown
+  //Get Countdown
   const countdownDays = await countdown(date);
-    console.log(countdownDays, 'Days Away!')
+  console.log(countdownDays, 'Days Away!');
 
+
+  //Call Geonames API
+  const coordinates = await getCord(location);
+    console.log(coordinates, 'From Geo Names API');
+
+    let lat = coordinates.lat;
+    let lng = coordinates.lng;
 
 // Call Weather
 
-
-
+  const weatherForcast = await getWeather(lat, lng);
+      console.log('Forcast recieved::: Todays max temp is:',weatherForcast.data[0].max_temp)
 
 
 
