@@ -7,7 +7,7 @@ const mode = process.env.NODE_ENV === 'production' ? 'production' : 'development
 module.exports = {
 mode: mode,
 target: 'web',
-devtool: 'inline-source-map',
+devtool: 'source-map',
 entry: {
     main: ['webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000', './src/client/index.js']
 },

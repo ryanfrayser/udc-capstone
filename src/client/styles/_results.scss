@@ -1,5 +1,21 @@
-//By default display none. JS will trigger to remove class
-// .noDisplay{
-//     display: none;
-// }
+// By default display none. JS will trigger to remove class
 
+#results{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+#pix{
+    min-width:300px;
+    max-width: 400px;
+    border: none;
+}
+
+
+// .noDisplay {
+//     display:none !important;
+
+// }

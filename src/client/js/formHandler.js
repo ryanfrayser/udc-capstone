@@ -1,4 +1,5 @@
 const axios = require('axios');
+import { updateUI } from './updateUI.js';
 
 
 export function handleSubmit(event){
@@ -9,7 +10,7 @@ let placename = document.getElementById('placename').value;
 //Retrieve startDate entry
 let startDate = document.getElementById('startDate').value;
 
-console.log(placename,startDate)
+console.log(":::Request Made to Server:::", placename,startDate)
 
 //Make Post Request to Server
 
@@ -18,12 +19,11 @@ console.log(placename,startDate)
     //Then log Data recieved.
     .then(function(res){
         const data = res.data
-        console.log(data)
-        return data
+
+    // //Update User Inteface -> Run UpdateUI function
+        updateUI(data)
     })
 
-//Update User Inteface -> Run UpdateUI function
-    .then(updateUI(data))
 
 
 }

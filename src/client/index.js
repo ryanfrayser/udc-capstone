@@ -1,6 +1,6 @@
 // Import Functions
 import {handleSubmit} from "./js/formHandler.js";
-import {updateUI} from ''
+import {updateUI} from "./js/updateUI.js";
 
 console.log ("I'm here!");
 
@@ -15,7 +15,8 @@ document.getElementById('generate').addEventListener('click', handleSubmit);
 
 //Export Functions
 export {
-  handleSubmit
+  handleSubmit,
+  updateUI
 };
 
 if (module.hot)  {    // eslint-disable-line no-undef

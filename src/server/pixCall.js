@@ -11,12 +11,12 @@ const getPhoto = async (location) => {
         try {
             const data = response.data;
 
-
             return data.hits[0].webformatURL;
         }
 
         catch(error){
             console.log('Error fetching photo:::::::', error)
+
         }
 };
 
