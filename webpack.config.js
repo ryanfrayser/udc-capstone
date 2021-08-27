@@ -9,7 +9,7 @@ const WorkboxPlugin = require('workbox-webpack-plugin');
 module.exports = {
 mode: mode,
 target: 'web',
-devtool: 'source-map',
+devtool: 'inline-source-map',
 entry: {
     main: ['webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000', './src/client/index.js']
 },
