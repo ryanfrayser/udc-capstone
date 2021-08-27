@@ -4,7 +4,8 @@ const axios = require('axios').default;
 const getPhoto = async (location) => {
 
         const formattedLocation = location.replace(/\s/g, '+');
-        const apiKey = process.env.PIXABAY_API_KEY
+        // const apiKey = process.env.PIXABAY_API_KEY
+        const apiKey = "23094344-1b46cb32ba343753155d97a1b"
 
         const response = await axios.get(`https://pixabay.com/api/?key=${apiKey}&q=${formattedLocation}&image_type=photo&per_page=3`);
 

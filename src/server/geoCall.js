@@ -3,7 +3,8 @@ const axios = require('axios').default;
 
 
 const getCord = async (location) => {
-    const username = process.env.GEO_USERNAME
+    // const username = process.env.GEO_USERNAME
+    const username ="rfrayser"
 
     const response = await axios.get(`http://api.geonames.org/postalCodeSearchJSON?placename=${location}&maxRows=1&username=${username}`)
 
