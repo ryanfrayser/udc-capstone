@@ -16,7 +16,7 @@ document.getElementById('generate').addEventListener('click', handleSubmit);
 //Export Functions
 export {
   handleSubmit,
-  updateUI
+  updateUI,
 };
 
 if (module.hot)  {    // eslint-disable-line no-undef

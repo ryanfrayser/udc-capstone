@@ -27,7 +27,7 @@ body{
     background: #eee;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     display: grid;
-    grid-template-rows: 300px 100px 200px auto auto 100px;
+    grid-template-rows: 300px 100px 200px auto 100px;
     min-height: 100vh;
     // background: #eeeeee;
     color: #181818;
@@ -76,8 +76,11 @@ input{
 
 
 h1{
-    font-size: 50px;
     font-family: $header-font
+}
+h2 {
+    font-size: 1.5em;
+    font-family: $header-font;
 }
 
 textarea{

@@ -1,21 +1,57 @@
 // By default display none. JS will trigger to remove class
 
 #results{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: grid;
+    margin: 4em;
+    grid-template-columns: minmax(40ch, 110ch);
+    justify-items: center;
+    grid-gap: 1em;
 }
 
 
 #pix{
-    min-width:300px;
-    max-width: 400px;
-    border: none;
+    object-fit:fill;
+    max-width: 450px;
+    margin: 0 20px;
+    box-shadow: 0px 4px 5px #444;
+}
+// For Weather class to override the display above
+.noDisplay {
+    display:none !important;
+
 }
 
+//CURRENT WEATHER STYLES
 
-// .noDisplay {
-//     display:none !important;
+#weatherContainer{
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+}
 
-// }
+#currentWeather {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    width: 125px;
+    background: #3b4a6b;
+    color: #eee;
+    border-radius: 10px;
+    box-shadow: 0px 4px 5px #444;
+    padding: 1em;
+
+    #currentWeatherIcon{
+        width: 100%;
+        max-width: 75px;
+    }
+
+    #currentTemperature {
+        font-family: 'roboto', sans-serif;
+        margin: 1em;
+    }
+
+
+}

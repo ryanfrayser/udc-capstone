@@ -10,29 +10,31 @@
    <h1> Let's explore...</h1>
   </div>
   <!-- Location Input -->
-  <div id="location">
+  <form id="location">
     <label for="placename">Where are you traveling to?</label>
-    <input type="text"  id='placename' placeholder="Travel Location" required>
-  </div>
+    <input type="text"  id='placename' placeholder="Travel Location" required="required">
+  </form>
   <!-- Date Input -->
-  <div class ="dates">
+  <form class ="dates">
     <div>
       <label for="startDate">Trip start date</label>
       <input type="date" class= "dateInput" id="startDate" placeholder="Travel start date" required>
     </div>
 <!-- Button -->
     <button id="generate" type = "submit"> Generate </button>
-  </div>
+  </form>
 <!-- Results -->
   <section id="results" class="noDisplay" >
       <img id="pix">
-      <div>
-          <h3 id='tripTitle'></h3>
+      <h2 id='tripTitle'></h2>
+      <div id="weatherContainer">
+
           <!-- Show this content if the current weather is displayed -->
           <div id='currentWeather' class='noDisplay'>
              <p id='currentTitle' ></p>
              <img id='currentWeatherIcon'>
              <h1 id='currentTemp'></h1>
+             <p id="description"></p>
           </div>
 
           <!-- Show this if 5-day forecast is displayed -->
