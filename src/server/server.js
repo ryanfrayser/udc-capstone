@@ -85,7 +85,6 @@ console.log ('Request Made:::', location, date)
     console.log('Photo Recieved! URL:',locationPhoto)
 
   try {
-
     const clientData = {
       location: location,
       date: date,
