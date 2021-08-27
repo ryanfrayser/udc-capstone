@@ -52,11 +52,42 @@ document.getElementById('currentTemp').innerText = `${temperature} F`;
 document.getElementById('description').innerText = description;
 document.getElementById('currentWeatherIcon').setAttribute('src',iconSource);
 document.getElementById('currentTitle').innerText = 'Current Weather';
-}
+};
 
 
 
 //Display 5 Day Forecast Function
+
+function displayForecast () {
+    document.querySelector('#forecast').classList.remove("noDisplay");
+
+    document.getElementById('forecastTitle').innerText = "Here's your 5-day Forecast"
+    const forecastArray = data.forecast.data
+
+    for(let i = 0;i < forecastArray.length; i++) {
+
+        const ul = document.getElementById('fiveDayForecast');
+        const temperature = forecastArray[i].high_temp.toFixed();
+        const iconCode = forecastArray[i].weather.icon;
+        const description = forecastArray[i].weather.description;
+        const iconSource = `https://www.weatherbit.io/static/img/icons/${iconCode}.png`
+
+        const li = document.createElement('li');
+        li.classList.add('forecastDay')
+
+        const markup = `
+            <img src='${iconSource}' alt='${description}'>
+            <h1>${temperature}F</h1>
+            <p>${description}</p>
+        `
+        li.innerHTML = markup;
+        ul.appendChild(li);
+
+    }
+
+
+
+}
 
 
 };

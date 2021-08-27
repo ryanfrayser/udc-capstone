@@ -21,6 +21,10 @@
 
 }
 
+#tripTitle{
+    text-align: center;
+}
+
 //CURRENT WEATHER STYLES
 
 #weatherContainer{
@@ -37,7 +41,7 @@ align-items: center;
     justify-content: center;
     height: 200px;
     width: 125px;
-    background: #3b4a6b;
+    background: #57637e;
     color: #eee;
     border-radius: 10px;
     box-shadow: 0px 4px 5px #444;
@@ -56,3 +60,59 @@ align-items: center;
 
 
 }
+
+//FORECAST STYLES
+#forecast{
+
+
+    #fiveDayForecast{
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        padding-inline-start: 0;
+
+    }
+
+
+
+
+}
+
+
+.forecastDay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 5px;
+    height: 100px;
+    width: 75px;
+    background: #57637e;
+    color: #eee;
+    border-radius: 10px;
+    box-shadow: 0px 4px 5px #444;
+    padding: 1em;
+
+        img {
+            width: 100%;
+            max-width: 40px;
+        }
+
+        h1 {
+            font-family: 'roboto', sans-serif;
+            font-size: 1.5em;
+            margin: 2px;
+        }
+        p {
+            font-size: 0.75em;
+        }
+
+
+
+
+
+}
+
