@@ -3,11 +3,13 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { web } = require('webpack');
 const mode = process.env.NODE_ENV === 'production' ? 'production' : 'development'
+const WorkboxPlugin = require('workbox-webpack-plugin');
+
 
 module.exports = {
 mode: mode,
 target: 'web',
-devtool: 'source-map',
+devtool: 'inline-source-map',
 entry: {
     main: ['webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000', './src/client/index.js']
 },
@@ -59,6 +61,7 @@ plugins: [
     template :"./src/client/views/index.html",
     filename: "index.html"
     }),
+    new WorkboxPlugin.GenerateSW()
 
 
 ],
