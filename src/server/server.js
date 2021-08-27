@@ -1,4 +1,4 @@
-var path = require('path')
+const path = require('path')
 const express = require('express');
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
@@ -28,10 +28,19 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 
-// Serve the files on port 3000.
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!\n');
-});
+// // Serve the files on port 3000.
+// app.listen(3000, function () {
+//   console.log('Example app listening on port 3000!\n');
+// });
+
+
+
+
+//Testing Endpoint
+app.get('/test', async (req, res) => {
+  res.json({message: 'pass!'})
+})
+
 
 //---------------- App Logic Below ------------------
 
@@ -93,3 +102,6 @@ console.log ('Request Made:::', location, date)
     console.log(':::::Error sending data to the Client', error)
   }
 })
+
+//Export for testing
+module.exports = app;

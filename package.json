@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "nodemon src/server/server.js",
+    "start": "nodemon src/server/start.js",
     "prod": "NODE_ENV=production webpack --mode production --config webpack.config.js",
     "dev": "webpack --mode development --config webpack.config.js"
   },
@@ -26,6 +26,7 @@
     "sass": "^1.38.0",
     "sass-loader": "^12.1.0",
     "style-loader": "^3.2.1",
+    "supertest": "^6.1.6",
     "webpack": "^5.50.0",
     "webpack-bundle-analyzer": "^4.4.2",
     "webpack-cli": "^4.8.0",
