@@ -8,6 +8,13 @@
     "prod": "webpack --mode production",
     "dev": "webpack --mode development --config webpack.config.js"
   },
+
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
+  },
   "keywords": [],
   "author": "Ryan Frayser",
   "license": "ISC",
